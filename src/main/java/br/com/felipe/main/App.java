@@ -1,5 +1,6 @@
 package br.com.felipe.main;
 
+import br.com.felipe.models.Livro;
 import br.com.felipe.models.Pessoa;
 
 public class App {
@@ -8,5 +9,13 @@ public class App {
 
         System.out.println(felipe);
 
+
+        Livro HP = Livro.of("Harry Potter");
+
+        System.out.println(HP);
+
+        HP.setEmprestado();
+
+        System.out.println(HP);
     }
 }
