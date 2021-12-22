@@ -21,6 +21,10 @@ public class Livro {
         this.emprestado = true;
     }
 
+    public String getNome() {
+        return nome;
+    }
+
     @Override
     public String toString() {
         return "Nome: " + nome +
