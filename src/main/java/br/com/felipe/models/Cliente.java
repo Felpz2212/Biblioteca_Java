@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Cliente extends Pessoa{
 
-    private List<String> livros;
+    private List<Livro> livros;
 
     private Cliente(String nome, String cpf, String email) {
         super(nome, cpf, email);
@@ -19,12 +19,20 @@ public class Cliente extends Pessoa{
         if(livros == null){
             livros = new ArrayList<>();
         }
-        livros.add(livro.getNome());
+        livros.add(livro);
     }
 
-    public List<String> getLivros(){
+    public List<Livro> getLivros(){
         return this.livros;
     }
+
+  /* public void verificar(){
+        for (Livro livroT : livros){
+            if(!livroT.isEmprestado()){
+                livros.remove(livroT);
+            }
+        }
+    }*/
 
     @Override
     public String toString() {

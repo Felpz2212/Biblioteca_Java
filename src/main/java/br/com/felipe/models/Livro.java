@@ -1,5 +1,6 @@
 package br.com.felipe.models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Livro {
@@ -11,6 +12,7 @@ public class Livro {
     private Livro(String nome){
         this.nome = nome;
         this.emprestado = false;
+        this.autor = new ArrayList<>();
     }
 
     public static Livro of(String nome){
@@ -21,14 +23,32 @@ public class Livro {
         this.emprestado = true;
     }
 
+    public void setDevolvido(){
+        this.emprestado = false;
+    }
+
+    public void adicionarAutor(Autor autor){
+        this.autor.add(autor);
+    }
+
+    public List<Autor> getAutor() {
+        return this.autor;
+    }
+
     public String getNome() {
         return nome;
+    }
+
+    public boolean isEmprestado() {
+        return emprestado;
     }
 
     @Override
     public String toString() {
         return "Nome: " + nome +
                 "\n" +
-                "Emprestado: " + emprestado;
+                "Emprestado: " + emprestado +
+                "\n" +
+                "Autores: " + getAutor();
     }
 }
