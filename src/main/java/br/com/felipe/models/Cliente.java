@@ -26,13 +26,14 @@ public class Cliente extends Pessoa{
         return this.livros;
     }
 
-  /* public void verificar(){
-        for (Livro livroT : livros){
+  public void verificar(){ //verifica se na lista de livros do cliente existe algum livro cujo status emprestado seja falso e retira
+        for(int cont = 0; cont < livros.toArray().length; cont++){
+            Livro livroT = livros.get(cont);
             if(!livroT.isEmprestado()){
                 livros.remove(livroT);
             }
         }
-    }*/
+    }
 
     @Override
     public String toString() {

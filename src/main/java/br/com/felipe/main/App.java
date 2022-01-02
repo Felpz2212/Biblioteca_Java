@@ -31,7 +31,17 @@ public class App {
         HP.setDevolvido();
 
         System.out.println("--------------------------------------------------------");
-        //felipe.verificar();
+        felipe.verificar();
+        System.out.println(felipe);
+
+        System.out.println("---------------------------------------------------------------------");
+        felipe.adicionarLivro(HP);
+        HP.setEmprestado();
+        System.out.println(felipe);
+
+        HP.setDevolvido();
+        System.out.println(felipe);
+        felipe.verificar();
         System.out.println(felipe);
     }
 }
