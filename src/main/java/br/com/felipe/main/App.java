@@ -3,7 +3,6 @@ package br.com.felipe.main;
 import br.com.felipe.models.Autor;
 import br.com.felipe.models.Cliente;
 import br.com.felipe.models.Livro;
-import br.com.felipe.models.Pessoa;
 
 public class App {
     public static void main(String[] args) {
@@ -11,9 +10,7 @@ public class App {
 
         Autor JK = Autor.of("JK Rowlling", 41);
 
-
         System.out.println(felipe);
-
 
         Livro HP = Livro.of("Harry Potter");
 
@@ -21,6 +18,7 @@ public class App {
 
         HP.setEmprestado();
         HP.adicionarAutor(JK);
+        HP.adicionarCategoria("Ficção").adicionarCategoria("Magia");
 
         System.out.println(HP);
 
@@ -36,12 +34,12 @@ public class App {
 
         System.out.println("---------------------------------------------------------------------");
         felipe.adicionarLivro(HP);
-        HP.setEmprestado();
         System.out.println(felipe);
 
         HP.setDevolvido();
-        System.out.println(felipe);
         felipe.verificar();
         System.out.println(felipe);
+
+        // TODO: 02/01/2022 Achar um jeito de a partir do momento em que um livro for devolvido limpar da lista do cliente automaticamente
     }
 }

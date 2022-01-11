@@ -20,6 +20,7 @@ public class Cliente extends Pessoa{
             livros = new ArrayList<>();
         }
         livros.add(livro);
+        livro.setEmprestado();
     }
 
     public List<Livro> getLivros(){

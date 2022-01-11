@@ -8,11 +8,13 @@ public class Livro {
     private String nome;
     private List<Autor> autor;
     private boolean emprestado;
+    private List<String> categoria;
 
     private Livro(String nome){
         this.nome = nome;
         this.emprestado = false;
         this.autor = new ArrayList<>();
+        this.categoria = new ArrayList<>();
     }
 
     public static Livro of(String nome){
@@ -29,6 +31,16 @@ public class Livro {
 
     public void adicionarAutor(Autor autor){
         this.autor.add(autor);
+    }
+
+    public Livro adicionarCategoria(String categoria){
+        this.categoria.add(categoria);
+
+        return this;
+    };
+
+    public List<String> getCategoria() {
+        return this.categoria;
     }
 
     public List<Autor> getAutor() {
@@ -49,6 +61,8 @@ public class Livro {
                 "\n" +
                 "Emprestado: " + emprestado +
                 "\n" +
-                "Autores: " + getAutor();
+                "Autores: " + getAutor() +
+                "\n" +
+                "Categorias: " + getCategoria();
     }
 }
